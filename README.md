@@ -1,58 +1,93 @@
-# Angular Frontend Test Assignment
+# Angular Test Assignment
 
 ## 📋 Description
-This Angular 19 project implements a search panel and a data table to display filtered user data using `json-server` as a backend. It demonstrates SOLID principles and modern Angular features like standalone components, `inject()`, and signals.
+This Angular 19 project implements a user search interface using a search panel and a results data table, powered by `json-server`. It uses modern Angular features like standalone components, `inject()`, and `signal()`, and follows SOLID principles and modular architecture.
+
+---
 
 ## 🧩 Features
-- ✅ Search Panel: Filter by First Name, Last Name, Phone Number, and Position
-- ✅ Data Table: Displays filtered user records
-- ✅ Standalone Components using `standalone: true`
-- ✅ `inject()` and `signal()` usage
-- ✅ Clean folder structure and SOLID principles
+- 🔍 Search Panel with inputs: First Name, Last Name, Phone Number, Position
+- 📄 Data Table to display filtered user data
+- ⚡ Built with Angular 19 (standalone components, inject, signal)
+- 🧠 Modular folder structure and SOLID principle adherence
+- 🌐 Backend mock with `json-server`
+
+---
+
+## 📁 Folder Structure
+```
+src/
+├── app/
+│   ├── app.component.ts / html / scss
+│   ├── app.routes.ts
+│   ├── app.config.ts
+├── users/
+│   ├── components/
+│   │   ├── data-table/
+│   │   └── search-panel/
+│   ├── interface/
+│   │   └── user.ts
+│   ├── services/
+│       ├── user.service.ts
+│       └── user.service.spec.ts
+├── index.html
+├── main.ts
+├── styles.scss
 
 ## 🚀 Setup Instructions
+
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/angular-frontend-test.git
-cd angular-frontend-test
+git clone https://github.com/Gautam04g/angular-test-assement.git
+cd angular-test-assement
 ```
+
 ### 2. Install Dependencies
 ```bash
 npm install
 ```
-### 3. Run JSON Server
+
+### 3. Start JSON Server (Mock API)
 ```bash
+npm install -g json-server
 json-server --watch db.json
 ```
-This will start the mock API at: `http://localhost:3000/users`
+→ This will start your backend at: `http://localhost:3000/users`
 
 ### 4. Run Angular App
 ```bash
 ng serve
 ```
-App will be live at: `http://localhost:4200`
+→ Visit `http://localhost:4200` to see the app in action.
 
-## ⚙️ Architecture Visualization
+---
+
+## ⚙️ Architecture Diagram (Textual)
 ```
 AppComponent
-├── SearchPanelComponent → emits search filters
-├── DataTableComponent ← receives filtered users
-└── UserService → fetches data from JSON Server
+├── SearchPanelComponent (Standalone) → emits filters
+├── DataTableComponent (Standalone) ← shows users
+└── UserService → handles HTTP + filtering logic
 ```
 
-## 🧠 Design Decisions
-- Signals are used for local reactive state in AppComponent.
-- Standalone components make the app modular and future-proof.
-- inject() replaces constructor-based DI for brevity and clarity.
-- Filtering logic is delegated to backend via query params to keep UI clean.
+---
 
-## ✅ Requirements Covered
-- Search panel with 4 input fields ✔
-- Results rendered in a table ✔
-- Uses Angular 19 features ✔
-- SOLID principles and modular code ✔
-- Clean UI and code structure ✔
-- GitHub-compatible structure and documentation ✔
+## 🧠 Design Decisions
+- ✅ `signal()` used in `AppComponent` to manage users state reactively
+- ✅ `inject()` used instead of constructor DI for brevity
+- ✅ Standalone components improve modularity
+- ✅ json-server used to simulate real HTTP API with filters
+- ✅ Styling included via component-scoped CSS/SCSS
+
+---
+
+## 📦 Deliverables
+- ✅ Angular 19+ standalone-based UI app
+- ✅ `db.json` backend with mock users
+- ✅ README with setup + architecture
+- ✅ GitHub-push ready structure
+
+---
 
 ## 👨‍💻 Author
 Gautam G
