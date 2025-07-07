@@ -18,7 +18,7 @@ This Angular 19 project implements a user search interface using a search panel 
 ```
 src/
 ├── app/
-│   ├── app.component.ts / html / scss
+│   ├── app.component.ts
 │   ├── app.routes.ts
 │   ├── app.config.ts
 ├── users/
