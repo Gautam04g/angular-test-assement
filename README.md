@@ -33,6 +33,9 @@ src/
 ├── index.html
 ├── main.ts
 ├── styles.scss
+```
+
+---
 
 ## 🚀 Setup Instructions
 
